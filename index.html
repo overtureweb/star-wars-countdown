@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://www.overtureweb.com/thelastjedi/img/sw-the-last-jedi-tall-B.jpg" />
+    <title>Countdown to Star Wars: The Last Jedi</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-32x32.png">
+    <style>
+        body.stars {
+            background: url('img/stars.jpg') center;
+            background-size: cover;
+        }
+
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .countdown-container .sw-image {
+            width: 100%;
+        }
+
+        .countdown-container h3 {
+            font-weight: 400;
+        }
+
+        .countdown-container .time-units {
+            display: block;
+            margin-bottom: 1.5rem;
+            margin-left: .5rem;
+            margin-right: .5rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            .countdown-container .time-units {
+                display: inline;
+            }
+
+            .countdown-container .sw-image {
+                width: 40%;
+            }
+        }
+
+    </style>
+</head>
+<body class="stars">
+<div class="countdown-container">
+    <img class="sw-image" src="img/sw-the-last-jedi-tall-B.jpg" alt="Star Wars The Last Jedi">
+    <h3 id="countdown"></h3>
+</div>
+<script type="text/javascript">
+    (function () {
+        var openingDate = Date.parse("12/15/2017");
+        setInterval(function () {
+            var d = new Date(),
+                dateDiff = Math.floor((openingDate - Date.now()) / 1000 / 60 / 60 / 24),
+                h = 24 - d.getHours() < 10 ? "0" + (24 - d.getHours()) : 24 - d.getHours(),
+                m = 60 - d.getMinutes() < 10 ? "0" + (60 - d.getMinutes()) : 60 - d.getMinutes(),
+                s = 60 - d.getSeconds() < 10 ? "0" + (60 - d.getSeconds()) : 60 - d.getSeconds();
+            document.querySelector("#countdown").innerHTML = "<span class='time-units'><strong>" + dateDiff + "</strong>" + " days</span> " + "<span class='time-units'><strong>" + h + "</strong>" + " hours</span> " + "<span class='time-units'><strong>" + m + "</strong>" + " minutes</span> " + "<span class='time-units'><strong>" + s + "</strong>" + " seconds</span>";
+        }, 1);
+    })();
+
+</script>
+</body>
+</html>
