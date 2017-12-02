@@ -65,36 +65,12 @@
 <div class="countdown-container">
     <img class="sw-image" src="img/sw-the-last-jedi-tall-B.jpg" alt="Star Wars The Last Jedi">
     <h3 id="countdown">
-        <span class="time-units"></span>
-        <span class="time-units"></span>
-        <span class="time-units"></span>
-        <span class="time-units"></span>
+        <span class="time-units days"></span>
+        <span class="time-units hours"></span>
+        <span class="time-units minutes"></span>
+        <span class="time-units seconds"></span>
     </h3>
-
 </div>
-<script type="text/javascript">
-    (function () {
-        var openingDate = Date.parse("12/15/2017");
-        var spans = document.querySelectorAll(".time-units");
-
-        setInterval(function () {
-            var i = 0,
-                d = new Date(),
-                timeUnits = {
-                    days: Math.floor((openingDate - Date.now()) / 1000 / 60 / 60 / 24),
-                    hours: 23 - d.getHours(),
-                    minutes: 59 - d.getMinutes(),
-                    seconds: 59 - d.getSeconds()
-                };
-
-            for (var prop in timeUnits) {
-                if (timeUnits.hasOwnProperty(prop)) {
-                    spans[i].innerHTML = "<span>" + (timeUnits[prop] < 10 ? "0" + timeUnits[prop] : timeUnits[prop]) + "</span>" + " " + prop;
-                    i += 1;
-                }
-            }
-        }, 1);
-    })();
-</script>
+<script type="text/javascript" src="js/countdown.js"></script>
 </body>
 </html>
