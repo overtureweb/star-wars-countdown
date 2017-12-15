@@ -1,5 +1,5 @@
 (function () {
-    var openingDate = Date.parse("12/15/2017");
+    var openingDate = Date.parse("01/20/2021 12:00");
     var spans = document.querySelectorAll(".time-units");
 
     function countdown() {
